@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Photography</title>
+    <title>Photography Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #026c99;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        a {
+            color: #026c99;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>This is just the start to my photography portfolio site</h1>
-    <p>I am just writing stuff I don't really know why my page is allowed to be previewed.</p>
+    <header>
+        <h1>Photography Portfolio</h1>
+        <p>Welcome to my photography showcase</p>
+    </header>
+
+    <div class="container">
+        <h2>This is just the start to my photography portfolio site</h2>
+        <p>I am developing this site to showcase my photography work. More content will be added soon!</p>
+
+        <!-- Placeholder for future content -->
+        <div class="photo-gallery">
+            <!-- Photos will be added here -->
+        </div>
+
+        <p><a href="../index.html">← Back to Home</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Tate Fishburn. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
