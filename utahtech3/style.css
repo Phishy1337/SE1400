@@ -31,7 +31,7 @@ nav {
     font-weight: bold;
     background-color: #F3F3F3;
     padding-top: 0.5rem;
-    padding-middle: 0.5rem;
+    padding-right: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 2rem;
 }
@@ -68,7 +68,9 @@ footer {
 }
 
 #wrapper {
-    background-color: #ffffff, min-width: 960px, max-width: 2048px;
+    background-color: #ffffff;
+    min-width: 960px;
+    max-width: 2048px;
     box-shadow: 0px 3px 3px rgba(66, 66, 66, 0.3);
     width: 80%;
     margin-right: auto;
@@ -76,6 +78,13 @@ footer {
 }
 
 #homehero {
+    height: 300px;
+    background-image: url(homehero.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#studenthero {
     height: 300px;
     background-image: url(studenthero.jpg);
     background-size: cover;
