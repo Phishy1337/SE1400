@@ -136,6 +136,31 @@ label {
     text-align: right;
 }
 
+table {
+    margin: 0 auto;
+    border: 1px solid #424242;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid #424242;
+    padding: 5px;
+}
+
+td {
+    text-align: center;
+}
+
+.text {
+    text-align: left;
+}
+
+tr:nth-of-type(2n) {
+    background-color: #F3F3F3;
+}
+
 * {
     box-sizing: border-box;
 }
