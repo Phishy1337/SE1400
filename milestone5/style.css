@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Comfortaa', sans-serif;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: minmax(30px, 1fr) repeat(6, minmax(0, 100px)) minmax(30px, 1fr);
+    grid-template-rows: 1fr auto auto 1fr auto;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+header {
+    grid-column: 2 / 8;
+    grid-row: 1 / 2;
+    background-color: #EDE8D0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#title-area {
+    grid-column: 2 / 8;
+    grid-row: 2 / 3;
+    background-color: #EDE8D0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Comfortaa', sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+
+nav {
+    grid-column: 2 / 8;
+    grid-row: 3 / 4;
+    background-color: #EDE8D0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    font-size: 20px;
+    margin: 25px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    grid-column: 2 / 8;
+    grid-row: 4 / 5;
+    background-color: #EDE8D0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+footer {
+    grid-column: 2 / 8;
+    grid-row: 5 / 6;
+    background-color: #EDE8D0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hovering-nav li {
+    transition: all 0.3s ease-in-out;
+}
+
+#hovering-nav li:hover {
+    transform: scale(1.1);
+}
+
+#nav-left {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: 50px;
+}
+
+#wrapper::before,
+#wrapper::after {
+    content: "";
+    grid-column: 1 / 2;
+    grid-row: 1 / 6;
+    background-color: #EDE8D0;
+}
+
+#wrapper::after {
+    grid-column: 8 / 9;
+}
+
+@media screen and (max-width: 992px) {
+    #wrapper {
+        grid-template-columns: 0px 768px 0px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #wrapper {
+        grid-template-columns: 0px 100% 0px;
+    }
+}
