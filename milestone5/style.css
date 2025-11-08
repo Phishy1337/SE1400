@@ -21,6 +21,16 @@ body {
     max-height: 100vh;
 }
 
+#wrapper-portfolio {
+    display: grid;
+    grid-template-columns: minmax(30px, 1fr) repeat(6, minmax(0, 100px)) minmax(30px, 1fr);
+    grid-template-rows: 1fr auto auto 1fr auto;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+
+
 header {
     grid-column: 2 / 8;
     grid-row: 1 / 2;
@@ -38,6 +48,22 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#left-title-area {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: #EDE8D0;
+    padding: 20px;
+    display: flex;
+}
+
+#left-nav-area {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: #EDE8D0;
+    padding: 20px;
+    display: flex;
 }
 
 h1 {
