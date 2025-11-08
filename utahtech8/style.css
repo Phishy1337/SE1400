@@ -253,11 +253,11 @@ tbody tr:nth-of-type(even) {
 @media screen and (max-width: 900px) {
     video {
         float: none;
-        margin: none;
+        margin: 0px;
         width: 100%;
         height: auto;
     }
-    
+
     nav {
         grid-row: 2 / 3;
         grid-column: 1 / 5;
@@ -301,6 +301,13 @@ tbody tr:nth-of-type(even) {
 }
 
 @media screen and (max-width: 600px) {
+    video {
+        float: none;
+        margin: 0px;
+        width: 100%;
+        height: auto;
+    }
+
     header h1 {
         background-image: none;
         text-align: center;
