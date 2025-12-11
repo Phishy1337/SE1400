@@ -1,0 +1,97 @@
+HTML & CSS Final Study Guide Outline
+
+1. Core HTML Structure, Semantics, Best Practices
+- HTML document skeleton
+- Semantic elements: header, nav, main, article, section, aside, footer
+- Headings hierarchy, lists, links
+- Accessibility essentials: alt, role, aria-*, landmarks
+- Validation, formatting, whitespace, nesting rules
+
+2. Metadata and Head Elements
+- Doctype, html lang, meta charset, viewport
+- SEO meta tags, title, favicon, link, script
+
+3. Block, Inline, Inline-Block
+- Definitions, behavior, layout impact
+- Common elements in each category
+- Inline formatting context
+
+4. Tables and Lists
+- Table structure: table, thead, tbody, tfoot, tr, th, td
+- Scope, captions, accessibility
+- Ordered, unordered, description lists
+
+5. Media Elements
+- img, picture, source, responsive images
+- video, audio, controls, poster, preload
+- Accessibility: alt, captions, transcripts
+
+6. Forms and Validation
+- form attributes: action, method, autocomplete, novalidate
+- inputs: text, email, number, date, checkbox, radio, file
+- required, pattern, min/max, step, placeholder
+- label, fieldset, legend, name
+- Accessibility: for/id, aria-describedby, error messaging
+
+7. CSS Selectors
+- Type, class, ID
+- Combinators: descendant, child, adjacent, sibling
+- Attribute selectors
+- Pseudo-classes: hover, focus, active, nth-child, not
+- Pseudo-elements: before, after, first-line, first-letter
+
+8. CSS Specificity
+- Specificity calculation
+- Inline styles, !important
+- Conflict resolution strategies
+
+9. Box Model & Box-Sizing
+- content, padding, border, margin
+- box-sizing: content-box vs border-box
+- margin collapse
+
+10. Positioning
+- static, relative, absolute, fixed, sticky
+- stacking context, z-index
+
+11. Display, Visibility, Overflow
+- display values
+- visibility vs display
+- overflow: visible, hidden, auto, scroll
+
+12. Flexbox
+- Container: display, flex-direction, flex-wrap, justify-content, align-items, align-content, gap
+- Items: order, flex, flex-grow, flex-shrink, flex-basis, align-self
+- Axes, common patterns
+
+13. CSS Grid
+- Container: display, grid-template-columns/rows, grid-template-areas, auto-flow, gap, justify-/align-
+- Items: grid-column/row, grid-area, justify-self, align-self
+- Named lines, minmax, repeat, fr unit
+
+14. Typography, Units, Responsive Design, Media Queries
+- font-family, font-size, line-height, letter-spacing
+- units: px, em, rem, vw/vh, %, ch
+- responsive strategies: mobile-first, fluid type, container width
+- media queries, breakpoints
+
+15. Colors, Gradients, Backgrounds
+- color formats: hex, rgb(a), hsl(a)
+- linear-gradient, radial-gradient
+- background shorthand, multiple backgrounds
+
+16. Transitions, Transforms, Animations
+- transition properties
+- transform functions
+- keyframes, animation properties
+
+17. Common Pitfalls & Misconceptions
+- margin collapse
+- z-index and stacking context
+- absolute positioning vs relative container
+- flex vs grid usage
+- image sizing and aspect ratios
+- specificity traps and !important misuse
+
+18. Quick Reference Cheat Sheet
+- One-line summaries for exam recall

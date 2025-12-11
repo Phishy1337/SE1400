@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML & CSS Final Study Guide</title>
+  <link rel="stylesheet" href="finalcheatsheet.css">
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1>HTML & CSS Final Study Guide</h1>
+      <p class="explain">Short definitions first. Deeper explanations and examples follow. Use the Quick Reference at the end.</p>
+    </header>
+
+    <nav class="toc">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#html-structure">Core HTML Structure, Semantics, Best Practices</a></li>
+        <li><a href="#metadata-head">Metadata and Head Elements</a></li>
+        <li><a href="#display-types">Block vs Inline vs Inline-Block</a></li>
+        <li><a href="#tables-lists">Tables and Lists</a></li>
+        <li><a href="#media">Media Elements</a></li>
+        <li><a href="#forms">Forms and Validation</a></li>
+        <li><a href="#selectors">CSS Selectors</a></li>
+        <li><a href="#specificity">CSS Specificity</a></li>
+        <li><a href="#box-model">Box Model & Box-Sizing</a></li>
+        <li><a href="#positioning">Positioning</a></li>
+        <li><a href="#display-overflow">Display, Visibility, Overflow</a></li>
+        <li><a href="#flexbox">Flexbox</a></li>
+        <li><a href="#grid">CSS Grid</a></li>
+        <li><a href="#typography-responsive">Typography, Units, Responsive Design</a></li>
+        <li><a href="#colors-backgrounds">Colors, Gradients, Backgrounds</a></li>
+        <li><a href="#animation">Transitions, Transforms, Animations</a></li>
+        <li><a href="#pitfalls">Common Pitfalls & Misconceptions</a></li>
+        <li><a href="#quick-ref">Quick Reference Cheat Sheet</a></li>
+      </ol>
+    </nav>
+
+    <section id="html-structure">
+      <h2>Core HTML Structure, Semantics, Best Practices</h2>
+      <p><span class="def">Definition:</span> HTML structures content using semantic elements that convey meaning to browsers, assistive tech, and search engines.</p>
+      <p class="explain">Use semantic tags to describe content purpose (navigation, main content, sections). Keep headings in logical order, use alt text on images, and ensure links and buttons are interactive elements.</p>
+      <div class="two-col">
+        <div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Home&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;Site Header&lt;/header&gt;
+  &lt;nav&gt;&lt;a href="#"&gt;Home&lt;/a&gt; &lt;a href="#"&gt;About&lt;/a&gt;&lt;/nav&gt;
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h1&gt;Title&lt;/h1&gt;
+      &lt;section&gt;Section content&lt;/section&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+  &lt;aside&gt;Sidebar&lt;/aside&gt;
+  &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        <div>
+          <ul>
+            <li>Use landmark elements: <span class="kbd">header</span>, <span class="kbd">nav</span>, <span class="kbd">main</span>, <span class="kbd">footer</span>.</li>
+            <li>Heading order: <span class="kbd">h1</span> → <span class="kbd">h2</span> → <span class="kbd">h3</span> for nesting.</li>
+            <li>Links navigate, buttons act; don’t misuse spans/divs for interactivity.</li>
+            <li>Images need alt text that describes purpose; decorative images can use empty alt.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="metadata-head">
+      <h2>Metadata and Head Elements</h2>
+      <p><span class="def">Definition:</span> The head contains metadata that configures the document and resources.</p>
+<pre><code>&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;meta name="description" content="Summary of the page"&gt;
+  &lt;link rel="icon" href="/favicon.ico"&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;script src="app.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+      <ul>
+        <li><span class="kbd">doctype</span> triggers standards mode.</li>
+        <li><span class="kbd">lang</span> improves accessibility and SEO.</li>
+        <li><span class="kbd">viewport</span> enables responsive layouts on mobile.</li>
+      </ul>
+    </section>
+
+    <section id="display-types">
+      <h2>Block vs Inline vs Inline-Block</h2>
+      <p><span class="def">Definition:</span> Elements participate in different formatting contexts affecting layout behavior.</p>
+<div class="ascii"><pre>Block: starts on new line, full width
+Inline: flows within text, width by content
+Inline-block: inline flow, but width/height apply
+
+[Block]
+-------------------------------+
+|           DIV/P               |
+-------------------------------+
+
+[Inline]
+Text A &lt;span&gt;B&lt;/span&gt; C
+
+[Inline-block]
+Text A [button] [input] C
+</pre></div>
+<pre><code>.block { display: block; }
+.inline { display: inline; }
+.inlineBlock { display: inline-block; }</code></pre>
+    </section>
+
+    <section id="tables-lists">
+      <h2>Tables and Lists</h2>
+      <p><span class="def">Definition:</span> Tables display tabular data; lists show ordered or unordered items.</p>
+<pre><code>&lt;table&gt;
+  &lt;caption&gt;Scores&lt;/caption&gt;
+  &lt;thead&gt; &lt;tr&gt; &lt;th scope="col"&gt;Name&lt;/th&gt; &lt;th scope="col"&gt;Score&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt;
+  &lt;tbody&gt; &lt;tr&gt; &lt;th scope="row"&gt;A&lt;/th&gt; &lt;td&gt;95&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt;
+  &lt;tfoot&gt; &lt;tr&gt; &lt;td colspan="2"&gt;Total&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;ol&gt;&lt;li&gt;Step 1&lt;/li&gt;&lt;li&gt;Step 2&lt;/li&gt;&lt;/ol&gt;
+&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;
+&lt;dl&gt;&lt;dt&gt;Term&lt;/dt&gt;&lt;dd&gt;Definition&lt;/dd&gt;&lt;/dl&gt;</code></pre>
+    </section>
+
+    <section id="media">
+      <h2>Media Elements</h2>
+      <p><span class="def">Definition:</span> Built-in elements for images, audio, video with responsive and accessible features.</p>
+<pre><code>&lt;img src="cat.jpg" alt="Cat" width="400"&gt;
+
+&lt;picture&gt;
+  &lt;source media="(min-width: 800px)" srcset="hero-large.jpg"&gt;
+  &lt;source media="(min-width: 500px)" srcset="hero-med.jpg"&gt;
+  &lt;img src="hero-small.jpg" alt="Hero"&gt;
+&lt;/picture&gt;
+
+&lt;video src="movie.mp4" controls poster="poster.jpg" preload="metadata"&gt;&lt;/video&gt;
+&lt;audio src="sound.mp3" controls preload="none"&gt;&lt;/audio&gt;</code></pre>
+    </section>
+
+    <section id="forms">
+      <h2>Forms and Validation</h2>
+      <p><span class="def">Definition:</span> Forms collect user input with built-in validation using attributes.</p>
+<pre><code>&lt;form action="/submit" method="post" autocomplete="on"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Contact&lt;/legend&gt;
+    &lt;label for="name"&gt;Name&lt;/label&gt;
+    &lt;input id="name" name="name" type="text" required minlength="2"&gt;
+
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input id="email" name="email" type="email" required&gt;
+
+    &lt;label for="age"&gt;Age&lt;/label&gt;
+    &lt;input id="age" name="age" type="number" min="0" max="120" step="1"&gt;
+
+    &lt;label&gt;Plan&lt;/label&gt;
+    &lt;input type="radio" name="plan" value="basic" required&gt; Basic
+    &lt;input type="radio" name="plan" value="pro"&gt; Pro
+
+    &lt;label for="terms"&gt;Accept&lt;/label&gt;
+    &lt;input id="terms" type="checkbox" required&gt;
+
+    &lt;label for="msg"&gt;Message&lt;/label&gt;
+    &lt;textarea id="msg" name="msg" rows="4" placeholder="Hi"&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+      <ul>
+        <li>Associate labels with controls via <span class="kbd">for</span>/<span class="kbd">id</span>.</li>
+        <li>Use <span class="kbd">required</span>, <span class="kbd">pattern</span>, <span class="kbd">min</span>, <span class="kbd">max</span>, <span class="kbd">step</span>.</li>
+        <li>Provide helpful errors via <span class="kbd">aria-describedby</span> and visible text.</li>
+      </ul>
+    </section>
+
+    <section id="selectors">
+      <h2>CSS Selectors</h2>
+      <p><span class="def">Definition:</span> Rules that match elements to apply styles.</p>
+<pre><code>div {}
+.box {}
+#header {}
+main p {}
+main &gt; p {}
+p + ul {}
+p ~ ul {}
+a[href^="https"] {}
+input[type="email"] {}
+button[disabled] {}
+a:hover {}
+input:focus {}
+li:nth-child(2) {}
+:not(.active) {}
+p::first-line {}
+.card::before { content: ""; }
+.card::after { content: ""; }</code></pre>
+    </section>
+
+    <section id="specificity">
+      <h2>CSS Specificity</h2>
+      <p><span class="def">Definition:</span> Determines which rule wins when multiple rules match.</p>
+<div class="ascii"><pre>Specificity weight: inline &gt; ID &gt; class/attr/pseudo-class &gt; type/pseudo-element
+Inline style: 1000
+#id: 100
+.class [attr] :hover :focus: 010
+div p ::before: 001
+!important overrides specificity, but use sparingly.</pre></div>
+    </section>
+
+    <section id="box-model">
+      <h2>Box Model & Box-Sizing</h2>
+      <p><span class="def">Definition:</span> Element size = content + padding + border; margins outside the box.</p>
+<div class="ascii"><pre>+----------- border -----------+
+|   +------ padding ------+   |
+|   |      content        |   |
+|   +---------------------+   |
+-----------------------------+
+margin (outside)
+</pre></div>
+<pre><code>.box { width: 200px; padding: 16px; border: 2px solid; margin: 12px; }
+* { box-sizing: border-box; }</code></pre>
+      <p class="explain">Use <span class="kbd">border-box</span> to include padding/border in declared widths. Beware margin collapse between vertical margins of block elements.</p>
+    </section>
+
+    <section id="positioning">
+      <h2>Positioning</h2>
+      <p><span class="def">Definition:</span> Controls how an element is placed relative to normal flow or a containing block.</p>
+<pre><code>.static { position: static; }
+.relative { position: relative; top: 10px; }
+.absolute { position: absolute; top: 10px; left: 10px; }
+.fixed { position: fixed; bottom: 0; }
+.sticky { position: sticky; top: 0; }</code></pre>
+      <p class="explain">Absolutely positioned elements use the nearest ancestor with non-static position as reference. Sticky toggles between relative and fixed when crossing a threshold.</p>
+    </section>
+
+    <section id="display-overflow">
+      <h2>Display, Visibility, Overflow</h2>
+      <p><span class="def">Definition:</span> Controls layout participation and how excess content is handled.</p>
+<pre><code>.hidden { display: none; }
+.invisible { visibility: hidden; }
+.transparent { opacity: 0; }
+.scroll { overflow: auto; }</code></pre>
+      <ul>
+        <li><span class="kbd">display: none</span> removes from layout.</li>
+        <li><span class="kbd">visibility: hidden</span> keeps layout space.</li>
+        <li><span class="kbd">opacity: 0</span> visible to hit-testing unless pointer-events disabled.</li>
+      </ul>
+    </section>
+
+    <section id="flexbox">
+      <h2>Flexbox</h2>
+      <p><span class="def">Definition:</span> One-dimensional layout along a main axis with flexible sizing.</p>
+<div class="ascii"><pre>Main axis: row or column
+Cross axis: perpendicular to main
+Container: display:flex; flex-direction; flex-wrap; justify-content; align-items; align-content; gap
+Items: order; flex-grow; flex-shrink; flex-basis; flex; align-self</pre></div>
+<pre><code>.flex { display: flex; gap: 8px; justify-content: space-between; align-items: center; }
+.item { flex: 1 1 200px; }</code></pre>
+      <div class="flex-demo">
+        <div class="demo-box">A</div>
+        <div class="demo-box">B</div>
+        <div class="demo-box">C</div>
+      </div>
+    </section>
+
+    <section id="grid">
+      <h2>CSS Grid</h2>
+      <p><span class="def">Definition:</span> Two-dimensional layout with explicit rows and columns.</p>
+<pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+}
+.item1 { grid-column: 1 / 3; }
+.item2 { grid-row: 2; }
+.item3 { grid-area: 3 / 1 / 4 / 4; }</code></pre>
+      <div class="grid-demo">
+        <div class="demo-box">1</div>
+        <div class="demo-box">2</div>
+        <div class="demo-box">3</div>
+        <div class="demo-box">4</div>
+      </div>
+      <p class="explain">Use <span class="kbd">fr</span> units for proportional tracks, <span class="kbd">minmax()</span> for responsive bounds, and named areas for template readability.</p>
+    </section>
+
+    <section id="typography-responsive">
+      <h2>Typography, Units, Responsive Design</h2>
+      <p><span class="def">Definition:</span> Control readable content with scalable units and breakpoints.</p>
+<pre><code>body { font-family: system-ui; font-size: 16px; line-height: 1.6; }
+:root { font-size: 16px; }
+.title { font-size: clamp(1.5rem, 2vw, 2.25rem); }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }</code></pre>
+      <ul>
+        <li>Units: <span class="kbd">px</span>, <span class="kbd">em</span>, <span class="kbd">rem</span>, <span class="kbd">vw/vh</span>, <span class="kbd">%</span>, <span class="kbd">ch</span>.</li>
+        <li>Prefer mobile-first: start narrow, add wider breakpoints.</li>
+      </ul>
+    </section>
+
+    <section id="colors-backgrounds">
+      <h2>Colors, Gradients, Backgrounds</h2>
+      <p><span class="def">Definition:</span> Color systems and layered backgrounds for design.</p>
+<pre><code>.swatch { color: #333; background: hsl(220 10% 96%); }
+.gradient { background: linear-gradient(90deg, #4f7cff, #84d18a); }
+.bg { background: url(hero.jpg) center/cover no-repeat; }</code></pre>
+    </section>
+
+    <section id="animation">
+      <h2>Transitions, Transforms, Animations</h2>
+      <p><span class="def">Definition:</span> Motion and state changes for interactive UI.</p>
+<pre><code>.btn { transition: transform 200ms ease, background 200ms ease; }
+.btn:hover { transform: translateY(-2px) scale(1.02); }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+.pulsing { animation: pulse 1.2s ease-in-out infinite; }</code></pre>
+    </section>
+
+    <section id="pitfalls">
+      <h2>Common Pitfalls & Misconceptions</h2>
+      <ul>
+        <li>Margin collapse: adjacent vertical margins of blocks may combine; add padding or block formatting context to prevent.</li>
+        <li>Z-index needs a positioned element and respects stacking contexts created by transforms/opacity/positioning.</li>
+        <li>Absolute elements use nearest non-static ancestor as containing block.</li>
+        <li>Use flex for one-dimensional alignment, grid for two-dimensional layout.</li>
+        <li>Images should have explicit width/height to avoid layout shift; use <span class="kbd">object-fit</span> for covering.</li>
+        <li>Minimize <span class="kbd">!important</span>; refactor selectors and cascade instead.</li>
+      </ul>
+    </section>
+
+    <section id="quick-ref">
+      <h2>Quick Reference Cheat Sheet</h2>
+      <div class="quick-ref">
+        <div>
+          <h3>HTML</h3>
+          <ul>
+            <li>Skeleton: doctype, lang, meta charset, viewport, title</li>
+            <li>Semantics: header, nav, main, section, article, aside, footer</li>
+            <li>Forms: label+id, required/pattern/min/max</li>
+            <li>Media: picture+source for responsive images</li>
+            <li>Tables: thead/tbody/tfoot, th scope</li>
+          </ul>
+        </div>
+        <div>
+          <h3>CSS</h3>
+          <ul>
+            <li>Selectors: type, .class, #id, combinators, :hover/:focus</li>
+            <li>Specificity: inline &gt; id &gt; class &gt; type</li>
+            <li>Box: border-box; margin/padding/border</li>
+            <li>Position: relative + absolute ancestor</li>
+            <li>Flexbox: flex container + flex items</li>
+            <li>Grid: template columns/rows, gap, place-items</li>
+            <li>Responsive: mobile-first, media queries</li>
+            <li>Motion: transition, transform, keyframes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
